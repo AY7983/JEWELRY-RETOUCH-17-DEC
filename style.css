@@ -819,7 +819,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin: 0 10px;
-  min-width: 100%;
+  min-width: 25%;
   text-align: center;
 }
 
@@ -963,7 +963,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 15px;
-  background-color: #333333; /* Card background */
+  background-color: #ffff; /* Card background */
   padding: 15px 20px;
   border-radius: 8px;
   width: 100%;
@@ -986,11 +986,13 @@ textarea {
 .contact-info h3 {
   margin: 0 0 5px;
   font-size: 1.2rem;
+  color:#841647;
 }
 
 .contact-info p {
   margin: 0;
   font-size: 1rem;
+  color:#841647;
 }
 
 /* Responsive Design */
