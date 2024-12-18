@@ -166,7 +166,7 @@
 }
 
 .section-title {
-  font-family:Abhaya Libre;
+  font-family: Cormorant Garamond;
   font-size: 2.5rem;
   font-weight: bold;
   color: #841647; /* Maroon color */
@@ -200,27 +200,13 @@
 .card-title {
   font-family: Cormorant Garamond;
   color:white !important;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-weight: 600;
 }
-
-.read-more {
-  display: inline-block;
-  margin-top: 10px;
-  border: 1px solid #fff;
-  color: #841647; /* Text color */
-  background-color: #fff; /* Button background */
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 5px;
-  font-family: Cormorant Garamond;
-  font-size: 0.9rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.read-more:hover {
-  background-color: #841647; /* Lighter maroon */
-  color: #fff;
+.list{
+  color: #ffff;
+  font-family: Abhaya Libre;
+  font-size: 17px;
 }
 
 /* General Section Styling */
@@ -235,7 +221,7 @@
 }
 
 #servicess h2 {
-  font-family: Nunito;
+  font-family: Cormorant Garamond;
   font-size: 2.5rem;
   color: white;
   margin-bottom: 20px;
@@ -243,6 +229,7 @@
 }
 .container-choose p{
   color: white;
+  font-family: Abhaya Libre;
 }
 
 /* Card Container Styling */
@@ -289,7 +276,7 @@
 }
 
 .card-content p {
-  font-family: Cormorant Garamond;
+  font-family: Abhaya Libre;
   font-size: 1rem;
   color:#000;
   line-height: 1.6;
@@ -370,30 +357,10 @@
   cursor: pointer;
 }
 
-.filter-buttons {
-  margin: 10px;
-  justify-content: center;
-  display: flex;
-  margin-bottom: 3rem;
-}
-
-.filter-buttons button {
-  background-color: #841647;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.filter-buttons button:hover {
-  background-color: #841647;
-}
 
 .portfoliocss{
   color:#841647 ;
-  font-family: Nunito;
+  font-family: Cormorant Garamond;
   justify-content: center;
   display: flex;
   margin-bottom: 25px;
@@ -430,6 +397,30 @@
   display: none;
 }
 
+.filter-buttons {
+  margin: 10px;
+  justify-content: center;
+  display: flex;
+  margin-bottom: 3rem;
+  font-family: Cormorant Garamond;
+}
+
+.filter-buttons .active{
+  color:#D6AE59;
+}
+.filter-buttons button {
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin: 6px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-buttons button:hover {
+  background-color: #D6AE59;
+}
+
 /* pricing styling */
 .pricing-container {
   text-align: center;
@@ -438,7 +429,7 @@
 }
 
 .pricing-header {
-  font-family: Nunito;
+  font-family: Cormorant Garamond;
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 30px;
@@ -470,14 +461,14 @@
 }
 
 .plan-title {
-  font-family: Cormorant Garamond;
+  font-family: Abhaya Libre;
   font-size: 1.5em;
   margin-bottom: 10px;
   color: #555;
 }
 
 .plan-price {
-  font-family: Cormorant Garamond;
+  font-family: Abhaya Libre;
   font-size: 2em;
   margin: 15px 0;
   color: white;
@@ -487,14 +478,14 @@
 }
 
 .plan-details {
-  font-family: Cormorant Garamond;
+  font-family: Abhaya Libre;
   font-size: 1em;
   margin-bottom: 20px;
   color:white;
 }
 
 .plan-action {
-  font-family: Cormorant Garamond;
+  font-family: Abhaya Libre;
   display: block;
   text-decoration: none;
   background-color: #841647;
@@ -512,13 +503,23 @@
 /* / Frequentry Asked Questions styling / */
 
 /* FAQ Container */
+ #frequently{
+   background-color: #F5F5F5;
+  
+
+ }
 .faq-container {
-  background: #fff;
+  background: #ffff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 90%;
-  max-width: 700px;
+  max-width: 786px;
+  margin-left: 25%;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* Title */
@@ -543,13 +544,19 @@ h1 {
 }
 
 .question .icon {
-  color: #8b1c4b;
+  color: #841647 !important;
   font-size: 1.2rem;
   margin-right: 10px;
+  border: 2px solid #841647;
+  border-radius: 50%;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .question .arrow {
-  color: #333;
+  color: #841647;
   transition: transform 0.3s ease;
 }
 
@@ -569,6 +576,58 @@ h1 {
 /* Active State for Arrow */
 .question.active .arrow {
   transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .faq-item {
+    padding: 8px 0;
+  }
+
+  .question {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .question .icon {
+    font-size: 1rem;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+
+  .answer {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-item {
+    padding: 5px 0;
+  }
+
+  .question {
+    font-size: 0.85rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .question .icon {
+    font-size: 0.9rem;
+    width: 16px;
+    height: 16px;
+    margin-bottom: 5px;
+  }
+
+  .question .arrow {
+    font-size: 1rem;
+  }
+
+  .answer {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
 }
 
 /* How it  Works */
@@ -601,8 +660,8 @@ h1 {
   color: #333;
   border-radius: 10px;
   width: 300px;
+  height: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 20px;
   text-align: center;
   position: relative;
   transition: transform 0.3s ease;
@@ -802,74 +861,186 @@ h1 {
   background-color: #8b1c4b;
 }
 
-
-/* Contact Styling */
-.contact-form-container {
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+/* Get-In-Touch */
+.contact {
   padding: 30px;
-  max-width: 600px;
-  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  max-width: 800px;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
+/* Form Row */
 .form-row {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin-bottom: 15px;
 }
 
 label {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #333;
+  margin-bottom: 5px;
+  font-size: 1rem;
 }
 
-input,
-textarea {
+input, textarea {
   padding: 10px;
-  border: 1px solid #e1b980;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  outline: none;
-  font-size: 14px;
-  color: #555;
-}
-
-input:focus,
-textarea:focus {
-  border-color: #e1b980;
-  box-shadow: 0 0 5px rgba(225, 185, 128, 0.5);
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
 }
 
 textarea {
   resize: none;
 }
 
-button {
-  background-color: #e1b980;
-  color: white;
-  border: none;
+.form-row button {
   padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
+  background-color: #ffd700;
+  border: none;
+  color: #333;
+  font-size: 1.2rem;
   cursor: pointer;
+  border-radius: 5px;
   transition: background 0.3s;
 }
 
-button:hover {
-  background-color: #d4a365;
+.form-row button:hover {
+  background-color: #e6c200;
 }
+
+/* Contact Container */
+/* Contact Section Styling */
+.contact-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #1f1f1f; /* Background color */
+  color: #ffffff; /* Text color */
+  font-family: Arial, sans-serif;
+}
+
+/* Title Styling */
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  flex-direction: column; /* Makes the cards stack vertically */
+  gap: 20px; /* Adds space between cards */
+  align-items: center; /* Aligns cards to the center */
+}
+
+/* Individual Contact Card */
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #333333; /* Card background */
+  padding: 15px 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px; /* Restricts maximum width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Container */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #841647; /* Icon background color */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+/* Contact Info */
+.contact-info h3 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+}
+
+.contact-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-title {
+      font-size: 1.8rem;
+  }
+
+  .contact-card {
+      flex-direction: column; /* Stack content inside card vertically */
+      text-align: center;
+  }
+
+  .icon-container {
+      width: 50px;
+      height: 50px;
+  }
+
+  .contact-info h3 {
+      font-size: 1rem;
+  }
+
+  .contact-info p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+      font-size: 1.5rem;
+  }
+
+  .contact-card {
+      padding: 10px;
+  }
+
+  .icon-container {
+      width: 40px;
+      height: 40px;
+  }
+
+  .contact-info h3 {
+      font-size: 0.9rem;
+  }
+
+  .contact-info p {
+      font-size: 0.8rem;
+  }
+}
+
 
      /* Footer Container */
      .footer {
@@ -975,3 +1146,24 @@ button:hover {
           justify-content: center;
       }
   }
+  /* Scroll to Top Button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffd700;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#scrollTopBtn:hover {
+  background-color: #e6c200;
+  transform: scale(1.1);
+}

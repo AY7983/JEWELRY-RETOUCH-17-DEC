@@ -1,29 +1,27 @@
+//email sending
+function sendMail(){
+   var params = {
+    name: document.getElementById("firstName").value ,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+   }
+   const serviceID ="service_ztjp0zw";
+  const templateID = "template_3nupub6";
+
+emailjs.send(serviceID,templateID,params)
+.then(
+  res => {
+    document.getElementById("firstName").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("message").value = "";
+    console.log(res);
+    alert("your message sent successfully");
+  })
+  .catch((err)=> console.log(err));
+}
 
 
-(function () {
-  emailjs.init("rBqg1HMhJ0BvtBzD4"); // Replace with your EmailJS Public Key
-})();
 
-// Form submission handler
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    // Send form data using EmailJS
-    emailjs
-      .sendForm("service_tes6xpc", "template_zjk5cpm", "#contactForm")
-      .then(
-        function (response) {
-          console.log("SUCCESS!", response.status, response.text);
-          alert("Message sent successfully!");
-        },
-        function (error) {
-          console.log("FAILED...", error);
-          alert("Failed to send message. Please try again.");
-        }
-      );
-  });
   // Select all questions
 const questions = document.querySelectorAll(".question");
 
@@ -81,6 +79,25 @@ dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     currentIndex = index;
     updateSlide();
+  });
+});
+// Get the button
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+// Show the button when scrolling down 300px
+window.onscroll = function () {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+
+// Scroll to the top of the page when the button is clicked
+scrollTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
   });
 });
 
