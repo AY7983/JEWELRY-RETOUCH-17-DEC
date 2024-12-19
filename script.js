@@ -5,8 +5,8 @@ function sendMail(){
     email: document.getElementById("email").value,
     message: document.getElementById("message").value,
    }
-   const serviceID ="service_ztjp0zw";
-  const templateID = "template_3nupub6";
+   const serviceID ="service_waggq6v";
+  const templateID = "template_3t2y449";
 
 emailjs.send(serviceID,templateID,params)
 .then(
@@ -21,6 +21,37 @@ emailjs.send(serviceID,templateID,params)
 }
 
 
+
+const testimonials = document.querySelectorAll('.testimonial-card');
+const dots = document.querySelectorAll('.dot');
+let currentIndex = 0;
+
+function showTestimonial(index) {
+  testimonials.forEach((testimonial, i) => {
+    testimonial.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1;
+  showTestimonial(currentIndex);
+});
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
+  showTestimonial(currentIndex);
+});
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    showTestimonial(index);
+  });
+});
+
+// Initialize the first testimonial
+showTestimonial(currentIndex);
 
   // Select all questions
 const questions = document.querySelectorAll(".question");
@@ -40,45 +71,6 @@ questions.forEach((question) => {
     } else {
       answer.style.display = "block";
     }
-  });
-});
-// Select DOM Elements
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const slide = document.querySelector(".testimonial-slide");
-const dots = document.querySelectorAll(".dot");
-
-let currentIndex = 0;
-
-// Update Slide Position
-function updateSlide() {
-  slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-  updateDots();
-}
-
-// Update Active Dot
-function updateDots() {
-  dots.forEach((dot, index) => {
-    dot.classList.toggle("active", index === currentIndex);
-  });
-}
-
-// Event Listeners for Navigation Arrows
-prevBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex > 0) ? currentIndex - 1 : dots.length - 1;
-  updateSlide();
-});
-
-nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex < dots.length - 1) ? currentIndex + 1 : 0;
-  updateSlide();
-});
-
-// Event Listeners for Dots
-dots.forEach((dot, index) => {
-  dot.addEventListener("click", () => {
-    currentIndex = index;
-    updateSlide();
   });
 });
 // Get the button
