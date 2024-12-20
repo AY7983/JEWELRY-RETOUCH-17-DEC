@@ -1,26 +1,28 @@
-//email sending
-function sendMail(){
-   var params = {
-    name: document.getElementById("firstName").value ,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-   }
-   const serviceID ="service_waggq6v";
-  const templateID = "template_3t2y449";
+// const emailjs = require('emailjs-com');
+// emailjs.init("JRZ4D4K-EU7nlq1lo"); // Initialize Email.js
+   
+// const sendEmail = () => {
+//   emailjs
+//     .send("service_waggq6v", "template_3t2y449", {
+//       user_name: "anju",
+//       user_email: "anjaliyadavyadav571@example.com",
+//       message: "Hello from Email.js!",
+//     })
+//     .then(
+//       (response) => {
+//         console.log("Email sent successfully:", response.status, response.text);
+//       },
+//       (error) => {
+//         console.error("Failed to send email:", error);
+//       }
+//     );
+// };
 
-emailjs.send(serviceID,templateID,params)
-.then(
-  res => {
-    document.getElementById("firstName").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("message").value = "";
-    console.log(res);
-    alert("your message sent successfully");
-  })
-  .catch((err)=> console.log(err));
-}
-
-
+// // Example: Attach to a button click
+// document.querySelector("form").addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   sendEmail();
+// });
 
 const testimonials = document.querySelectorAll('.testimonial-card');
 const dots = document.querySelectorAll('.dot');

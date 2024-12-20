@@ -81,9 +81,9 @@
 
 .explore-btn {
   font-family: Raleway;
-  background-color:#841647 !important;
-  color: white !important;
-  padding: 10px 20px;
+  color:#841647 !important;
+  background-color: white !important;
+  padding: 10px 20px !important;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
@@ -239,7 +239,7 @@
   font-family: Raleway;
   font-weight: bold;
   font-size: 1.5rem;
-  color: #333;
+  color: #841647;
   margin-top: 10px;
 }
 
@@ -273,25 +273,46 @@
 }
 
 .custom-card .card-img-top {
-  height: 400px;
-  object-fit: contain;
-  background-color: #fdfdfd;
-  border: 2px solid #841647;
+  width: 100%;  /* Set width to 100% to make it responsive */
+  max-width: 450px;  /* Set max-width for larger screens */
+  height: auto;  /* Ensure the aspect ratio is preserved */
+  object-fit: contain;  /* Preserve the aspect ratio */
+  background-color: #fdfdfd;  /* Optional background color */
+}
+
+/* For smaller screens (mobile responsiveness) */
+@media (max-width: 767px) {
+  .custom-card .card-img-top {
+    width: 100%;  /* Ensure the image takes full width on mobile */
+    height: auto;  /* Maintain aspect ratio */
+  }
 }
 
 .card-body {
-  /* background-color: #841647; Dark maroon background */
   color: #fff;
-  padding: 20px;
-  border: 2px solid #841647;
+  padding: 10px;
+  /* border: 2px solid #841647; */
+  /* background-color: #841647; Uncomment if you want to use dark maroon background */
 }
 
 .card-title {
-  font-family: Raleway;
-  color:#841647 !important;
-  font-size: 2rem;
+  font-family: Raleway, sans-serif;  /* Use a fallback font in case Raleway is unavailable */
+  color: #841647 !important;
+  font-size: 1.5rem;
   font-weight: 600;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+  .card-body {
+    padding: 15px;  /* Reduce padding on smaller screens */
+  }
+
+  .card-title {
+    font-size: 1.5rem;  /* Make the font size smaller on mobile */
+  }
+}
+
 .list{
   color: #ffff;
   font-family: Abhaya Libre;
@@ -367,13 +388,17 @@
 .card-content p {
   font-family: Raleway;
   font-size: 1rem;
-  color:#000;
+  color: #000;
   line-height: 1.6;
   text-align: center;
+  margin-top: 40px !important;
   margin-bottom: 40px;
-  max-width: 800px;
+  max-width: 776px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
 }
 
@@ -900,7 +925,7 @@ h1 {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
   margin-bottom: 30px;
 }
 
@@ -951,7 +976,13 @@ h1 {
   color: black;
   font-size: 1rem;
   line-height: 1.4;
+  display: flex;
+  margin: 10px 15px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
 }
+
 
 /* CTA Button */
 .cta-button button {
@@ -1099,7 +1130,7 @@ h1 {
 }
 
 .dot.active {
-  background-color: #555;
+  background-color: #841647;
 }
 
 
@@ -1119,16 +1150,20 @@ h1 {
 
 
 /* Get-In-Touch */
+.get-in{
+  background-color: #242323a6;
+}
 .contact {
   padding: 30px;
   background: rgba(0, 0, 0, 0.7);
   margin: 50px auto;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(41, 40, 40, 0.5);
+  width: 80%;
 }
 .contact::before{
   content: "";
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
   position: absolute;
   top: 0;
   left: 0;
@@ -1229,7 +1264,7 @@ textarea {
 .contact-section {
   text-align: center;
   padding: 20px;
-  background-color: #1f1f1fa6; /* Background color */
+  background-color: #0e0d0da6; /* Background color */
   color: #ffffff; /* Text color */
   font-family: Arial, sans-serif;
 }
@@ -1273,19 +1308,25 @@ textarea {
   width: 60px;
   height: 60px;
 }
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Space between contact items */
+}
 
 /* Contact Info */
 .contact-info h3 {
-  margin: 0 0 5px;
+  margin-top: 10px;
   font-size: 1.2rem;
   font-family: Playfair Display;
   color:#a75c7d;
 }
 
 .contact-info p {
-  margin: 0;
+  margin-left: 20px;
   font-size: 1rem;
   color:#841647;
+  padding: 10px 5px;
 }
 
 /* Responsive Design */
@@ -1442,12 +1483,6 @@ textarea {
       background-color: #841647;
       color:#ffff;
   }
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between contact items */
-  }
-  
   .contact-item {
     display: flex;
     align-items: center;

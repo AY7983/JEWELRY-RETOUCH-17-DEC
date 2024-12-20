@@ -638,20 +638,21 @@
   </div>
 </section>
 <section id="contact" style="background: url('./images/jewelry.jpg') no-repeat center center/cover; padding: 40px 20px; color: #fff;">
+  <div class="get-in">
   <div style="max-width: 800px; margin: 0 auto;">
-    <h1 style="text-align: center; margin-bottom: 10px; font-weight: bold; background-color: #841647;">Get in Touch</h1>
-    <p style="text-align: center; margin-bottom: 20px; background-color: #841647">
+    <h1 style="text-align: center; margin-bottom: 10px;">Get in Touch</h1>
+    <p style="text-align: center; margin-bottom: 20px;">
       Ready to elevate your jewelry images? Contact us today for inquiries or to discuss your project!
     </p>
 
     <div class="form-input" style="background: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-      <form style="display: flex; flex-direction: column;">
-        <input type="text" placeholder="Enter Full Name">
+      <form onsubmit= "sendEmail(); reset(); return false;" style="display: flex; flex-direction: column;">
+        <input type="text" id="fullname" placeholder="Enter Full Name">
         <input type="text" placeholder="Enter Last Name" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
-        <input type="email" placeholder="Enter Email" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
-        <input type="tel" placeholder="Enter Phone Number" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
-        <input type="text" placeholder="Subject" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
-        <textarea rows="5" placeholder="Description" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;"></textarea>
+        <input type="email" id="email" placeholder="Enter Email" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
+        <input type="tel" id="phone" placeholder="Enter Phone Number" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
+        <input type="text" id="subject" placeholder="Subject" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;">
+        <textarea rows="5"  id="message"placeholder="Description" style="margin: 10px 0; padding: 10px; border: none; border-radius: 5px;"></textarea>
         <button type="submit" style="padding: 10px; margin: 10px 0;  color: #fff; border: none; border-radius: 5px; cursor: pointer; background-color: #841647;">Send Message</button>
       </form>
     </div>
@@ -691,7 +692,8 @@
         </div>
     </div> 
 </section>
- </section>
+</section>
+
  <!-- Footer Section -->
      <footer class="footer">
       <div class="footer-container">
@@ -782,8 +784,36 @@
     // Default "All" filter on page load
     filterItems('all');
   </script>
-    </script>
-     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+ <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  //  <!-- Use the type="module" attribute -->
+  <script type="module">
+    import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
+    
+    emailjs.init('JRZ4D4K-EU7nlq1lo');  // Replace with your public key
+
+    const sendEmail = (formData) => {
+      const serviceID = 'service_waggq6v';  // Replace with your service ID
+      const templateID = 'template_3t2y449';  // Replace with your template ID
+
+      emailjs.send(serviceID, templateID, formData)
+        .then((response) => {
+          console.log('Email sent successfully:', response.status, response.text);
+        })
+        .catch((error) => {
+          console.error('Failed to send email:', error);
+        });
+    };
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = {
+        user_name: e.target.user_name.value,
+        user_email: e.target.user_email.value,
+        message: e.target.message.value,
+      };
+      sendEmail(formData);
+    });
+  </script>
     <script src="script.js"></script>
   </body>
 </html>
