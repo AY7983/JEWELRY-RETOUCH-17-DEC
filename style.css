@@ -16,7 +16,6 @@
 }
 .bg-color{
   background: url('./images/jewelry-retouch.png') no-repeat center center/cover;
-
     content: "";
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
     position: absolute;
@@ -723,6 +722,7 @@
   font-family: Playfair Display;
   font-size: 2.5rem;
   font-weight: bold;
+  padding: 10px 10px;
   margin-bottom: 30px;
   color: #841647;
 }
@@ -730,7 +730,7 @@
 .pricing-plans {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
@@ -765,7 +765,7 @@
   color: white;
 }
 .pricing-color{
-  background-color: #841647;
+  background-color: #ad4c78;
 }
 
 .plan-details {
@@ -779,7 +779,7 @@
   font-family: Raleway;
   display: block;
   text-decoration: none;
-  background-color: #841647;
+  background-color: #ad4c78;
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
