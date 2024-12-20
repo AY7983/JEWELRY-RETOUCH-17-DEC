@@ -184,6 +184,24 @@
   margin-bottom: 30px;
   color: black;
 }
+.key-points li {
+  display: flex; /* Use flexbox for alignment */
+  justify-content: space-between; /* Space between content and icon */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px; /* Add some spacing between list items */
+}
+
+.key-points .icon {
+  margin-left: 10px; /* Optional: Add spacing between text and icon */
+  font-size: 18px; /* Adjust size of the icon if needed */
+  color: green; /* Optional: Change the color of the icon */
+}
+
+.key-points .content {
+  flex: 1; /* Let the content take up available space */
+  text-align: left;
+}
+
 
 .key-points li {
   margin-bottom: 10px;
@@ -193,7 +211,7 @@
 }
 
 .key-points .icon {
-  color: #841647;
+  color: #ffff;
   font-family: Playfair Display;
   font-weight: bold;
   margin-right: 10px;
@@ -220,7 +238,7 @@
 .service-title {
   font-family: Raleway;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #333;
   margin-top: 10px;
 }
@@ -255,15 +273,17 @@
 }
 
 .custom-card .card-img-top {
-  height: 200px;
+  height: 400px;
   object-fit: contain;
   background-color: #fdfdfd;
+  border: 2px solid #841647;
 }
 
 .card-body {
   /* background-color: #841647; Dark maroon background */
   color: #fff;
   padding: 20px;
+  border: 2px solid #841647;
 }
 
 .card-title {
@@ -1058,7 +1078,7 @@ h1 {
 }
 
 .right-arrow {
-  right: -5%; /* Adjusted for a wider container */
+  right: -7%; /* Adjusted for a wider container */
   color: #841647;
   font-size: 35px;
   width: auto;
@@ -1156,7 +1176,7 @@ label {
   font-size: 1rem;
 }
 
-input, textarea {
+.form-input input, textarea {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
