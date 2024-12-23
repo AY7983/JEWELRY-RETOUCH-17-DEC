@@ -1,28 +1,40 @@
-// const emailjs = require('emailjs-com');
-// emailjs.init("JRZ4D4K-EU7nlq1lo"); // Initialize Email.js
-   
-// const sendEmail = () => {
-//   emailjs
-//     .send("service_waggq6v", "template_3t2y449", {
-//       user_name: "anju",
-//       user_email: "anjaliyadavyadav571@example.com",
-//       message: "Hello from Email.js!",
-//     })
-//     .then(
-//       (response) => {
-//         console.log("Email sent successfully:", response.status, response.text);
-//       },
-//       (error) => {
-//         console.error("Failed to send email:", error);
-//       }
-//     );
-// };
-
-// // Example: Attach to a button click
-// document.querySelector("form").addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   sendEmail();
-// });
+emailjs.init("JRZ4D4K-EU7nlq1lo");
+// Function to send email
+const sendEmail = () => {
+  // Collect form data
+  const formData = {
+    user_name: document.getElementById("fullname").value,
+    user_email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    phone: document.getElementById("phone").value,
+    message: document.getElementById("message").value,
+  };
+  // Validate form fields
+  if (!formData.user_name || !formData.user_email || !formData.message) {
+    alert("Please fill in all required fields (Name, Email, and Message).");
+    return;
+  }
+  // Send email using EmailJS
+  emailjs
+    .send("service_waggq6v", "template_3t2y449", formData)
+    .then(
+      (response) => {
+        console.log("Email sent successfully:", response.status, response.text);
+        alert("Message sent successfully!");
+        // Optionally, reset the form
+        document.querySelector("form").reset();
+      },
+      (error) => {
+        console.error("Failed to send email:", error);
+        alert("Failed to send message. Please try again later.");
+      }
+    );
+};
+// Attach event listener to the form
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault(); // Prevent default form submission
+  sendEmail(); // Call the sendEmail function
+});
 
 const testimonials = document.querySelectorAll('.testimonial-card');
 const dots = document.querySelectorAll('.dot');
